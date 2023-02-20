@@ -21,16 +21,13 @@ const XChart = (props: XChartProps) => {
       });
 
       // step 2: 处理数据
-      const dataX = data.map(item => ({ ...item, value: Number(item.value) }));
+      const dataX = data.map((item) => ({ ...item, value: Number(item.value) }));
 
       // Step 2: 载入数据源
       chart.source(dataX);
 
       // Step 3：创建图形语法，绘制柱状图，由 genre 和 sold 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
-      chart
-        .interval()
-        .position('name*value')
-        .color('name');
+      chart.interval().position('name*value').color('name');
 
       // Step 4: 渲染图表
       chart.render();

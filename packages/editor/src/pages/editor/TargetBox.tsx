@@ -56,7 +56,7 @@ const TargetBox = memo((props: SourceBoxProps) => {
         },
       });
     },
-    collect: monitor => ({
+    collect: (monitor) => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),
       item: monitor.getItem(),
@@ -65,7 +65,7 @@ const TargetBox = memo((props: SourceBoxProps) => {
 
   const dragStop: ItemCallback = useMemo(() => {
     return (layout, oldItem, newItem, placeholder, e, element) => {
-      const curPointData = pointData.filter(item => item.id === newItem.i)[0];
+      const curPointData = pointData.filter((item) => item.id === newItem.i)[0];
       dispatch({
         type: 'editorModal/modPointData',
         payload: { ...curPointData, point: newItem, status: 'inToCanvas' },
@@ -75,7 +75,7 @@ const TargetBox = memo((props: SourceBoxProps) => {
 
   const onDragStart: ItemCallback = useMemo(() => {
     return (layout, oldItem, newItem, placeholder, e, element) => {
-      const curPointData = pointData.filter(item => item.id === newItem.i)[0];
+      const curPointData = pointData.filter((item) => item.id === newItem.i)[0];
       dispatch({
         type: 'editorModal/modPointData',
         payload: { ...curPointData, status: 'inToCanvas' },
@@ -85,7 +85,7 @@ const TargetBox = memo((props: SourceBoxProps) => {
 
   const onResizeStop: ItemCallback = useMemo(() => {
     return (layout, oldItem, newItem, placeholder, e, element) => {
-      const curPointData = pointData.filter(item => item.id === newItem.i)[0];
+      const curPointData = pointData.filter((item) => item.id === newItem.i)[0];
       dispatch({
         type: 'editorModal/modPointData',
         payload: { ...curPointData, point: newItem, status: 'inToCanvas' },

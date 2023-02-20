@@ -15,9 +15,9 @@ const List = memo((props: ListType) => {
   const handleSearch = () => {
     let keyword = iptRef?.current?.value;
     if (keyword) {
-      setData(prev => {
+      setData((prev) => {
         return prev.filter(
-          item => item.title.indexOf(keyword) > -1 || item.desc.indexOf(keyword) > -1,
+          (item) => item.title.indexOf(keyword) > -1 || item.desc.indexOf(keyword) > -1,
         );
       });
       return;

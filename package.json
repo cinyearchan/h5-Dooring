@@ -31,14 +31,14 @@
     "build:ui": "npx lerna exec --scope @h5-dooring/ui -- npm run build",
     "docs:dev": "npx lerna exec --scope @h5-dooring/doc -- npm run dev",
     "docs:build": "npx lerna exec --scope @h5-dooring/doc -- npm run build",
-    "server": "node server.js",
-    "dev": "http-server dist",
-    "test-demo": "http-server dist",
-    "postinstall": "umi generate tmp",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "nocompress": "cross-env RM_TMPDIR=none COMPRESS=none umi build"
+    "server": "npx lerna exec --scope @h5-dooring/editor -- node server.js",
+    "dev": "npx lerna exec --scope @h5-dooring/editor -- npm run dev",
+    "test-demo": "npx lerna exec --scope @h5-dooring/editor -- npm run test-demo",
+    "postinstall": "npx lerna exec --scope={@h5-dooring/editor,@h5-dooring/ui} -- npm run postinstall",
+    "prettier": "npx lerna exec --scope={@h5-dooring/editor,@h5-dooring/ui} -- npm run prettier",
+    "test": "npx lerna exec --scope={@h5-dooring/editor,@h5-dooring/ui} -- npm run test",
+    "test:coverage": "npx lerna exec --scope={@h5-dooring/editor,@h5-dooring/ui} -- npm run test:coverage",
+    "nocompress": "npx lerna exec --scope @h5-dooring/editor -- npm run nocompress"
   },
 
   "homepage": "http://h5.dooring.cn",

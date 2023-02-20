@@ -9,6 +9,8 @@ export default () => (
       <div></div>
       <div></div>
     </div>
-    <h3 style={{textAlign: 'center', fontStyle: 'italic', color: '#2842d8'}}>H5-Dooring, 让H5制作更简单</h3>
+    <h3 style={{ textAlign: 'center', fontStyle: 'italic', color: '#2842d8' }}>
+      H5-Dooring, 让H5制作更简单
+    </h3>
   </div>
 );

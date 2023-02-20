@@ -37,7 +37,7 @@ export default memo(function MutiText(props: MultiTextProps) {
         value!.map((item, i) => {
           return (
             <div className={styles.iptWrap} key={i}>
-              <Input defaultValue={item} onChange={e => handleChange(i, e)} />
+              <Input defaultValue={item} onChange={(e) => handleChange(i, e)} />
               <Popconfirm
                 title="确定要删除吗?"
                 onConfirm={() => handleDel(i)}

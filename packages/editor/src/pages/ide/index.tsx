@@ -48,7 +48,7 @@ let html = `<!DOCTYPE html>
 </html>
 `;
 
-export default function() {
+export default function () {
   const [isUpdate, setUpdate] = useState(false);
   const [cursor, setCursor] = useState<CodeMirror.Position>({ line: 1, ch: 1 });
   const [data, setData] = useState<{ data: string }>({ data: html });
@@ -65,7 +65,7 @@ export default function() {
       fetch(`${serverUrl}/dooring/render`, { method: 'POST', body: res }).then(() => {
         html = res;
         message.success('已保存');
-        setUpdate(prev => !prev);
+        setUpdate((prev) => !prev);
       });
     };
   }, [data]);
@@ -81,7 +81,7 @@ export default function() {
 
   useHotkeys<HTMLDivElement>(
     'ctrl+s',
-    event => {
+    (event) => {
       fetchPage();
       event.preventDefault();
     },

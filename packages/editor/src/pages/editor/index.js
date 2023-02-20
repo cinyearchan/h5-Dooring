@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { DndProvider } from 'react-dnd';
 
-import Container from './Container'
+import Container from './Container';
 
 import styles from './index.less';
 

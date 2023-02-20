@@ -32,7 +32,7 @@ export default function Layout({ children }: IRouteComponentProps) {
       let returnValue = generateRespones(v);
       if (returnValue) {
         //排除null
-        setList(prev => [...prev, { isUser: false, text: returnValue }]);
+        setList((prev) => [...prev, { isUser: false, text: returnValue }]);
       }
     }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps

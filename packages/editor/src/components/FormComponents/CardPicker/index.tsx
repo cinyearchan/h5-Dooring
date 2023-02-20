@@ -36,7 +36,16 @@ export default memo((props: CardPickerType) => {
             onClick={() => handlePicker(item)}
             key={i}
           >
-            <Icon type={item} size={20} color={'#4091f7'} spin={false} text={''} fontSize={0} fontColor={''} link={''} />
+            <Icon
+              type={item}
+              size={20}
+              color={'#4091f7'}
+              spin={false}
+              text={''}
+              fontSize={0}
+              fontColor={''}
+              link={''}
+            />
           </span>
         );
       })}

@@ -88,7 +88,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
         ]}
       >
         <Input
-          ref={(inputRef as unknown) as () => RefObject<HTMLInputElement>}
+          ref={inputRef as unknown as () => RefObject<HTMLInputElement>}
           onPressEnter={save}
           onBlur={save}
         />
@@ -166,7 +166,7 @@ class EditableTable extends React.Component<any, any> {
 
   handleDelete = (key: string) => {
     const dataSource = [...this.state.dataSource];
-    const newDataSource = dataSource.filter(item => item.key !== key);
+    const newDataSource = dataSource.filter((item) => item.key !== key);
     this.setState({ dataSource: newDataSource });
     this.props.onChange && this.props.onChange(newDataSource);
   };
@@ -188,7 +188,7 @@ class EditableTable extends React.Component<any, any> {
 
   handleSave = (row: any) => {
     const newData = [...this.state.dataSource];
-    const index = newData.findIndex(item => row.key === item.key);
+    const index = newData.findIndex((item) => row.key === item.key);
     const item = newData[index];
     newData.splice(index, 1, {
       ...item,
@@ -261,8 +261,8 @@ class EditableTable extends React.Component<any, any> {
       method: 'GET',
       mode: 'cors',
     })
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         this.setState({
           apiResult: res,
         });
@@ -277,13 +277,13 @@ class EditableTable extends React.Component<any, any> {
         cell: EditableCell,
       },
     };
-    const columns: ColumnsType<any> = this.columns.map(col => {
+    const columns: ColumnsType<any> = this.columns.map((col) => {
       if (!col.editable) {
         return col;
       }
       return {
         ...col,
-        onCell: record => ({
+        onCell: (record) => ({
           record,
           editable: col.editable,
           dataIndex: col.dataIndex,
@@ -300,12 +300,12 @@ class EditableTable extends React.Component<any, any> {
       beforeUpload(file: File, fileList: Array<File>) {
         // 解析并提取excel数据
         let reader = new FileReader();
-        reader.onload = function(e: any) {
+        reader.onload = function (e: any) {
           let data = e.target.result;
           let workbook = XLSX.read(data, { type: 'binary' });
           let sheetNames = workbook.SheetNames; // 工作表名称集合
           let draftArr: any = {};
-          sheetNames.forEach(name => {
+          sheetNames.forEach((name) => {
             let worksheet = workbook.Sheets[name]; // 只能通过工作表名称来获取指定工作表
             for (let key in worksheet) {
               // v是读取单元格的原始值
@@ -381,14 +381,14 @@ class EditableTable extends React.Component<any, any> {
             <div className={styles.formItem}>
               <Input
                 placeholder="请输入api地址"
-                onChange={e => this.handleApiField('api', e.target.value)}
+                onChange={(e) => this.handleApiField('api', e.target.value)}
               />
             </div>
             <div className={styles.formItem}>
               <Input.TextArea
                 placeholder="请输入头信息, 如{token: 123456}, 格式必须为json对象"
                 rows={4}
-                onChange={e => this.handleApiField('header', e.target.value)}
+                onChange={(e) => this.handleApiField('header', e.target.value)}
               />
             </div>
             <div className={styles.formItem}>
@@ -404,7 +404,7 @@ class EditableTable extends React.Component<any, any> {
                 <div className={styles.formItem}>
                   <Input
                     placeholder="设置数据源字段"
-                    onChange={e => this.handleApiField('dataField', e.target.value)}
+                    onChange={(e) => this.handleApiField('dataField', e.target.value)}
                   />
                   <p style={{ color: 'red' }}>
                     数据源字段是接口返回的图表数据对应的字段, 必填, 否则无法正确导入数据

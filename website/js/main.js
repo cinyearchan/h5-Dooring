@@ -147,7 +147,7 @@ function appinocks_magnificPopupVideo() {
     ----------------------------------------------------- */
 
 function appinocks_pricingTab() {
-  'use-scrict';
+  'use-strict';
 
   // Variables
   var pricingTabLink = jQuery('.price-toggle-wrap > a'),

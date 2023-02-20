@@ -311,7 +311,7 @@ const Container = (props: {
           },
           move: true,
         });
-        setDragState(prev => {
+        setDragState((prev) => {
           return {
             x: prev.x + diffx,
             y: prev.y + diffy,
@@ -333,12 +333,12 @@ const Container = (props: {
   const onwheelFn = useMemo(() => {
     return (e: React.WheelEvent<HTMLDivElement>) => {
       if (e.deltaY < 0) {
-        setDragState(prev => ({
+        setDragState((prev) => ({
           x: prev.x,
           y: prev.y + 40,
         }));
       } else {
-        setDragState(prev => ({
+        setDragState((prev) => ({
           x: prev.x,
           y: prev.y - 40,
         }));

@@ -48,7 +48,7 @@ const Login = () => {
         localStorage.setItem('h5', JSON.stringify(res.h5));
         history.push('/');
       })
-      .catch(err => {
+      .catch((err) => {
         // 模拟, 需要上真实验证接口
         localStorage.setItem('nickname', 'test');
         localStorage.setItem('h5', JSON.stringify([]));

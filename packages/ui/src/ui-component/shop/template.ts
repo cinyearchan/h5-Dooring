@@ -5,7 +5,7 @@ import Coupons from './Coupons/template';
 import CardLabel from './CardLabel/template';
 
 const basicTemplate = [ZhuanLan, List, Tab, Coupons, CardLabel];
-const ShopTemplate = basicTemplate.map(v => {
+const ShopTemplate = basicTemplate.map((v) => {
   return { ...v, category: 'shop' };
 });
 

@@ -24,7 +24,7 @@ function getBase64(file: File | Blob) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result as string);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 }
 
@@ -104,7 +104,7 @@ class PicturesWall extends React.Component<PicturesWallType> {
   handleChange = ({ file, fileList }: UploadChangeParam<UploadFile<any>>) => {
     this.setState({ fileList });
     if (file.status === 'done') {
-      const files = fileList.map(item => {
+      const files = fileList.map((item) => {
         const { uid, name, status } = item;
         const url = item.url || item.response.result.url;
         return { uid, name, status, url };

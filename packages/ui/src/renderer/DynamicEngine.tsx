@@ -35,7 +35,7 @@ type DynamicType = {
 const DynamicEngine = memo((props: DynamicType) => {
   const { type, config, category } = props;
   const Dynamic = useMemo(() => {
-    return (DynamicFunc(type, category) as unknown) as FC<DynamicType>;
+    return DynamicFunc(type, category) as unknown as FC<DynamicType>;
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [config]);
 

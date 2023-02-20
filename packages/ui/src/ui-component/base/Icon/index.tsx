@@ -11,8 +11,9 @@ interface IconType extends IIconConfig {
 const XIcon = memo((props: IconType) => {
   const { color, size, link, text, fontSize, fontColor, type, spin, isTpl } = props;
 
-  const MyIcon: React.ForwardRefExoticComponent<Pick<AntdIconProps, AntdIconType> &
-    React.RefAttributes<HTMLSpanElement>> = Icon[type];
+  const MyIcon: React.ForwardRefExoticComponent<
+    Pick<AntdIconProps, AntdIconType> & React.RefAttributes<HTMLSpanElement>
+  > = Icon[type];
 
   const handleClick = () => {
     if (!link || window.location.href.indexOf('/editor') > -1) return;

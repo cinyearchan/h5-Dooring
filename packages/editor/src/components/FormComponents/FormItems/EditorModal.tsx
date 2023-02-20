@@ -16,7 +16,7 @@ interface EditorModalProps {
   visible: boolean;
 }
 
-const EditorModal: FC<EditorModalProps> = props => {
+const EditorModal: FC<EditorModalProps> = (props) => {
   const { item, onSave, visible } = props;
 
   const onFinish = (values: any) => {
@@ -26,11 +26,11 @@ const EditorModal: FC<EditorModalProps> = props => {
   const handleOk = () => {
     form
       .validateFields()
-      .then(values => {
+      .then((values) => {
         values.id = item.id;
         onSave && onSave(values);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };

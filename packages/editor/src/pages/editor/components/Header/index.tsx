@@ -54,8 +54,12 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
     //       : `/preview?tid=${props.location.query.tid}`,
     //   );
     // }, 600);
-     setTimeout(() => {
-      window.open(`http://localhost:8008/preview?tid=${props.location.query.tid}&pointData=${encodeURI(JSON.stringify(pointData))}`);
+    setTimeout(() => {
+      window.open(
+        `http://localhost:8008/preview?tid=${props.location.query.tid}&pointData=${encodeURI(
+          JSON.stringify(pointData),
+        )}`,
+      );
     }, 600);
   };
 
@@ -70,7 +74,11 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
   const content = () => {
     const { tid } = location.query || '';
     return (
-      <QRCode value={`${window.location.protocol}//http://localhost:8008/preview?tid=${props.location.query.tid}&pointData=${JSON.stringify(pointData)}`} />
+      <QRCode
+        value={`${window.location.protocol}//http://localhost:8008/preview?tid=${
+          props.location.query.tid
+        }&pointData=${JSON.stringify(pointData)}`}
+      />
     );
   };
 
@@ -111,7 +119,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
       cancelText: '取消',
       onOk() {
         let name = iptRef.current!.state.value;
-        req.post('/visible/tpl/save', { name, tpl: pointData }).then(res => {
+        req.post('/visible/tpl/save', { name, tpl: pointData }).then((res) => {
           console.log(res);
         });
       },
@@ -205,7 +213,7 @@ const HeaderComponent = memo((props: HeaderComponentProps) => {
       beforeUpload(file: File) {
         // 解析并提取excel数据
         let reader = new FileReader();
-        reader.onload = function(e: Event) {
+        reader.onload = function (e: Event) {
           let data = (e as any).target.result;
           importTpl && importTpl(JSON.parse(data));
         };

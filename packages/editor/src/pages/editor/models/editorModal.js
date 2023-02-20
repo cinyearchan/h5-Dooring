@@ -29,7 +29,7 @@ export default {
     },
     modPointData(state, { payload }) {
       const { id } = payload;
-      const pointData = state.pointData.map(item => {
+      const pointData = state.pointData.map((item) => {
         if (item.id === id) {
           return payload;
         }
@@ -53,7 +53,7 @@ export default {
     copyPointData(state, { payload }) {
       const { id } = payload;
       const pointData = [];
-      state.pointData.forEach(item => {
+      state.pointData.forEach((item) => {
         pointData.push({ ...item });
         if (item.id === id) {
           pointData.push({ ...item, id: uuid(6, 10) });
@@ -68,7 +68,7 @@ export default {
     },
     delPointData(state, { payload }) {
       const { id } = payload;
-      const pointData = state.pointData.filter(item => item.id !== id);
+      const pointData = state.pointData.filter((item) => item.id !== id);
       overSave('userData', pointData);
       return {
         ...state,
@@ -80,7 +80,7 @@ export default {
       if (state.curPoint) {
         const { id } = state.curPoint;
         const pointData = [];
-        state.pointData.forEach(item => {
+        state.pointData.forEach((item) => {
           pointData.push({ ...item });
           if (item.id === id) {
             pointData.push({ ...item, id: uuid(6, 10) });
@@ -98,7 +98,7 @@ export default {
     keyboardDelPointData(state) {
       if (state.curPoint) {
         const { id } = state.curPoint;
-        const pointData = state.pointData.filter(item => item.id !== id);
+        const pointData = state.pointData.filter((item) => item.id !== id);
         overSave('userData', pointData);
         return {
           ...state,

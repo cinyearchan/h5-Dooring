@@ -32,7 +32,7 @@ const XTab = (props: TabType) => {
     <div className={styles.tabWrap} ref={tabWrapRef}>
       <Tabs
         scrollThreshold={3}
-        onChange={i => {
+        onChange={(i) => {
           console.log(i);
         }}
       >
@@ -41,7 +41,7 @@ const XTab = (props: TabType) => {
             <Panel title={item} key={i}>
               <div className={styles.content}>
                 {sourceData
-                  .filter(item => item.type === i)
+                  .filter((item) => item.type === i)
                   .map((item, i) => {
                     return (
                       <div className={styles.item} key={i}>

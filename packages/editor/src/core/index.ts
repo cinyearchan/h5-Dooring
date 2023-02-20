@@ -1,2 +1,2 @@
 import FormRender from './renderer/FormRender';
-export {  FormRender };
+export { FormRender };

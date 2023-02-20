@@ -21,7 +21,7 @@ const XLine = (props: XChartProps) => {
       });
 
       // step 2: 处理数据
-      const dataX = data.map(item => ({ ...item, value: Number(item.value) }));
+      const dataX = data.map((item) => ({ ...item, value: Number(item.value) }));
 
       // Step 2: 载入数据源
       chart.source(dataX, {
@@ -49,13 +49,10 @@ const XLine = (props: XChartProps) => {
       });
 
       chart.line().position('name*value');
-      chart
-        .point()
-        .position('name*value')
-        .style({
-          stroke: '#fff',
-          lineWidth: 1,
-        });
+      chart.point().position('name*value').style({
+        stroke: '#fff',
+        lineWidth: 1,
+      });
 
       chart.render();
     }

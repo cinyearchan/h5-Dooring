@@ -25,7 +25,7 @@ const XLine = (props: XChartProps) => {
       });
 
       // step 2: 处理数据
-      const dataX = data.map(item => ({ ...item, value: Number(item.value), a: '1' }));
+      const dataX = data.map((item) => ({ ...item, value: Number(item.value), a: '1' }));
 
       // Step 2: 载入数据源
       chart.source(dataX, {

@@ -2,18 +2,8 @@ import React, { memo } from 'react';
 import { ILongTextConfig } from './schema';
 import logo from '@/assets/longText.png';
 const LongText = memo((props: ILongTextConfig & { isTpl: boolean }) => {
-  const {
-    text,
-    fontSize,
-    color,
-    indent,
-    lineHeight,
-    textAlign,
-    bgColor,
-    padding,
-    radius,
-    isTpl,
-  } = props;
+  const { text, fontSize, color, indent, lineHeight, textAlign, bgColor, padding, radius, isTpl } =
+    props;
   return (
     <>
       {isTpl ? (

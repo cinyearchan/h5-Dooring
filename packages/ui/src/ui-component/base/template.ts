@@ -27,7 +27,7 @@ const basicTemplate = [
   WhiteTpl,
   RichText,
 ];
-const BasicTemplate = basicTemplate.map(v => {
+const BasicTemplate = basicTemplate.map((v) => {
   return { ...v, category: 'base' };
 });
 

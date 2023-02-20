@@ -80,7 +80,7 @@ const FormItems = (props: FormItemsProps) => {
   });
 
   const handleAddItem = (item: baseFormUnion) => {
-    let tpl = formTpl.find(v => v.type === item.type);
+    let tpl = formTpl.find((v) => v.type === item.type);
     let newData = [...formData, { ...tpl!, id: uuid(6, 10) }];
     setFormData(newData);
     onChange && onChange(newData);
@@ -93,13 +93,13 @@ const FormItems = (props: FormItemsProps) => {
   };
 
   const handleDelItem = (item: baseFormUnion) => {
-    let newData = formData.filter(v => v.id !== item.id);
+    let newData = formData.filter((v) => v.id !== item.id);
     setFormData(newData);
     onChange && onChange(newData);
   };
 
   const handleSaveItem = (data: baseFormUnion) => {
-    let newData = formData.map(v => (v.id === data.id ? data : v));
+    let newData = formData.map((v) => (v.id === data.id ? data : v));
     setFormData(newData);
     onChange && onChange(newData);
     setVisible(false);

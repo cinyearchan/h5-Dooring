@@ -26,7 +26,7 @@ export type EditorModalProps = {
   cropRate: number;
 };
 
-const EditorModal: FC<EditorModalProps> = props => {
+const EditorModal: FC<EditorModalProps> = (props) => {
   const { item, onSave, visible, onCancel, cropRate } = props;
   const onFinish = (values: Store) => {
     console.log(values);
@@ -35,13 +35,13 @@ const EditorModal: FC<EditorModalProps> = props => {
   const handleOk = () => {
     form
       .validateFields()
-      .then(values => {
+      .then((values) => {
         if (item) {
           values.id = item.id;
           onSave && onSave(values);
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   };

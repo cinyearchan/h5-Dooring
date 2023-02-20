@@ -54,11 +54,12 @@ function ListItem(props: ListItemProps) {
           <span className={styles.action} onClick={() => onDel()}>
             <MinusCircleOutlined />
           </span>
-          {connectDragSource(
-            <span className={styles.action}>
-              <MenuOutlined />
-            </span>,
-          ) // 拖动图标作为 Drag 对象
+          {
+            connectDragSource(
+              <span className={styles.action}>
+                <MenuOutlined />
+              </span>,
+            ) // 拖动图标作为 Drag 对象
           }
         </div>
       </div>,
@@ -82,7 +83,7 @@ type DragObject = {
 };
 const dragSpec: DragSourceSpec<DndItemProps, DragObject> = {
   // 拖动开始时，返回描述 source 数据。后续通过 monitor.getItem() 获得
-  beginDrag: props => ({
+  beginDrag: (props) => ({
     id: props.id,
     originalIndex: props.find(props.id).index,
   }),
@@ -136,7 +137,7 @@ export type DataListType = DataListMemo & {
   connectDropTarget: ConnectDropTarget;
 };
 
-const List = function(props: DataListType) {
+const List = function (props: DataListType) {
   const { onChange, value, connectDropTarget, cropRate } = props;
   const [list, setList] = useState(value);
   const [visible, setVisible] = useState(false);
@@ -144,13 +145,13 @@ const List = function(props: DataListType) {
 
   const handleDel = (id: string) => {
     if (value && onChange) {
-      let newVal = value.filter(item => id !== item.id);
+      let newVal = value.filter((item) => id !== item.id);
       onChange(newVal);
     }
   };
 
   const find = (id: string) => {
-    const item = list!.find(c => `${c.id}` === id)!;
+    const item = list!.find((c) => `${c.id}` === id)!;
     return {
       item,
       index: list!.indexOf(item!),
@@ -185,10 +186,10 @@ const List = function(props: DataListType) {
       console.log('c');
       setVisible(false);
       if (onChange) {
-        onChange(list!.map(p => (p.id === item.id ? item : p)));
+        onChange(list!.map((p) => (p.id === item.id ? item : p)));
         return;
       }
-      setList(prev => prev!.map(p => (p.id === item.id ? item : p)));
+      setList((prev) => prev!.map((p) => (p.id === item.id ? item : p)));
     },
     [list, onChange],
   );
@@ -242,7 +243,7 @@ const List = function(props: DataListType) {
   );
 };
 
-const DndList = DropTarget(type, {}, connect => ({
+const DndList = DropTarget(type, {}, (connect) => ({
   connectDropTarget: connect.dropTarget(),
 }))(List);
 

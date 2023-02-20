@@ -438,47 +438,32 @@ declare module 'video-react' {
     type PLAYER_ACTIVATE = 'video-react/PLAYER_ACTIVATE';
     type USER_ACTIVATE = 'video-react/USER_ACTIVATE';
 
-    function handleFullscreenChange(
-      isFullscreen: boolean,
-    ): {
+    function handleFullscreenChange(isFullscreen: boolean): {
       type: FULLSCREEN_CHANGE;
       isFullscreen;
     };
 
-    function activate(
-      activity,
-    ): {
+    function activate(activity): {
       type: PLAYER_ACTIVATE;
       activity;
     };
 
-    function userActivate(
-      activity,
-    ): {
+    function userActivate(activity): {
       type: USER_ACTIVATE;
       activity;
     };
 
-    function play(operation: {
-      action: 'play';
-      source: string;
-    }): {
+    function play(operation: { action: 'play'; source: string }): {
       type: OPERATE;
       operation;
     };
 
-    function pause(operation: {
-      action: 'pause';
-      source: string;
-    }): {
+    function pause(operation: { action: 'pause'; source: string }): {
       type: OPERATE;
       operation;
     };
 
-    function togglePlay(operation?: {
-      action: 'toggle-play';
-      source: string;
-    }): {
+    function togglePlay(operation?: { action: 'toggle-play'; source: string }): {
       type: OPERATE;
       operation;
     };
@@ -583,184 +568,132 @@ declare module 'video-react' {
     type ERROR = 'video-react/ERROR';
     type ACTIVATE_TEXT_TRACK = 'video-react/ACTIVATE_TEXT_TRACK';
 
-    function handleLoadStart(
-      videoProps,
-    ): {
+    function handleLoadStart(videoProps): {
       type: LOAD_START;
       videoProps;
     };
 
-    function handleCanPlay(
-      videoProps,
-    ): {
+    function handleCanPlay(videoProps): {
       type: CAN_PLAY;
       videoProps;
     };
 
-    function handleWaiting(
-      videoProps,
-    ): {
+    function handleWaiting(videoProps): {
       type: WAITING;
       videoProps;
     };
 
-    function handleCanPlayThrough(
-      videoProps,
-    ): {
+    function handleCanPlayThrough(videoProps): {
       type: CAN_PLAY_THROUGH;
       videoProps;
     };
 
-    function handlePlaying(
-      videoProps,
-    ): {
+    function handlePlaying(videoProps): {
       type: PLAYING;
       videoProps;
     };
 
-    function handlePlay(
-      videoProps,
-    ): {
+    function handlePlay(videoProps): {
       type: PLAY;
       videoProps;
     };
 
-    function handlePause(
-      videoProps,
-    ): {
+    function handlePause(videoProps): {
       type: PAUSE;
       videoProps;
     };
 
-    function handleEnd(
-      videoProps,
-    ): {
+    function handleEnd(videoProps): {
       type: END;
       videoProps;
     };
 
-    function handleSeeking(
-      videoProps,
-    ): {
+    function handleSeeking(videoProps): {
       type: SEEKING;
       videoProps;
     };
 
-    function handleSeeked(
-      videoProps,
-    ): {
+    function handleSeeked(videoProps): {
       type: SEEKED;
       videoProps;
     };
 
-    function handleDurationChange(
-      videoProps,
-    ): {
+    function handleDurationChange(videoProps): {
       type: DURATION_CHANGE;
       videoProps;
     };
 
-    function handleTimeUpdate(
-      videoProps,
-    ): {
+    function handleTimeUpdate(videoProps): {
       type: TIME_UPDATE;
       videoProps;
     };
 
-    function handleVolumeChange(
-      videoProps,
-    ): {
+    function handleVolumeChange(videoProps): {
       type: VOLUME_CHANGE;
       videoProps;
     };
 
-    function handleProgressChange(
-      videoProps,
-    ): {
+    function handleProgressChange(videoProps): {
       type: PROGRESS_CHANGE;
       videoProps;
     };
 
-    function handleRateChange(
-      videoProps,
-    ): {
+    function handleRateChange(videoProps): {
       type: RATE_CHANGE;
       videoProps;
     };
 
-    function handleSuspend(
-      videoProps,
-    ): {
+    function handleSuspend(videoProps): {
       type: SUSPEND;
       videoProps;
     };
 
-    function handleAbort(
-      videoProps,
-    ): {
+    function handleAbort(videoProps): {
       type: ABORT;
       videoProps;
     };
 
-    function handleEmptied(
-      videoProps,
-    ): {
+    function handleEmptied(videoProps): {
       type: EMPTIED;
       videoProps;
     };
 
-    function handleStalled(
-      videoProps,
-    ): {
+    function handleStalled(videoProps): {
       type: STALLED;
       videoProps;
     };
 
-    function handleLoadedMetaData(
-      videoProps,
-    ): {
+    function handleLoadedMetaData(videoProps): {
       type: LOADED_META_DATA;
       videoProps;
     };
 
-    function handleLoadedData(
-      videoProps,
-    ): {
+    function handleLoadedData(videoProps): {
       type: LOADED_DATA;
       videoProps;
     };
 
-    function handleResize(
-      videoProps,
-    ): {
+    function handleResize(videoProps): {
       type: RESIZE;
       videoProps;
     };
 
-    function handleError(
-      videoProps,
-    ): {
+    function handleError(videoProps): {
       type: ERROR;
       videoProps;
     };
 
-    function handleSeekingTime(
-      time,
-    ): {
+    function handleSeekingTime(time): {
       type: SEEKING_TIME;
       time;
     };
 
-    function handleEndSeeking(
-      time,
-    ): {
+    function handleEndSeeking(time): {
       type: END_SEEKING;
       time;
     };
 
-    function activateTextTrack(
-      textTrack,
-    ): {
+    function activateTextTrack(textTrack): {
       type: ACTIVATE_TEXT_TRACK;
       textTrack;
     };

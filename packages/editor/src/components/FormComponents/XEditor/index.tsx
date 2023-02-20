@@ -39,7 +39,7 @@ export default memo(function XEditor(props: any) {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-        onUploadProgress: function(event) {
+        onUploadProgress: function (event) {
           // 上传进度发生变化时调用param.progress
           console.log((event.loaded / event.total) * 100);
           param.progress((event.loaded / event.total) * 100);
@@ -56,7 +56,7 @@ export default memo(function XEditor(props: any) {
           },
         });
       })
-      .catch(err => {
+      .catch((err) => {
         param.error({
           msg: '上传失败.',
         });
@@ -68,7 +68,7 @@ export default memo(function XEditor(props: any) {
     onChange && onChange(htmlContent);
   };
 
-  const handleEditorChange = editorState => {
+  const handleEditorChange = (editorState) => {
     setEditorState(editorState);
     if (onChange) {
       const htmlContent = editorState.toHTML();

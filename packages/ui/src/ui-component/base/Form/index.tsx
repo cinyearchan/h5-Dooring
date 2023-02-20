@@ -64,7 +64,7 @@ const FormComponent = (props: IFormConfig & { isTpl: boolean }) => {
             </div>
           )}
           <div className={styles.formContent}>
-            {formControls.map(item => {
+            {formControls.map((item) => {
               const FormItem = BaseForm[item.type];
               return (
                 <FormItem onChange={(v: string) => handleChange(item, v)} {...item} key={item.id} />

@@ -1,14 +1,14 @@
 .sliderWrap {
   position: absolute;
-  display: inline-block;
   right: 60px;
   bottom: 160px;
+  display: inline-block;
   height: 32px;
+  color: #4a4a4a;
   line-height: 30px;
   background: #ffffff;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  color: #4a4a4a;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
   .slider {
     position: absolute;
     right: 30px;
@@ -17,51 +17,51 @@
   }
   .showTip {
     position: absolute;
+    left: 50%;
     display: block;
     width: 20px;
     height: 100%;
-    left: 50%;
     transform: translateX(-50%);
   }
   .sliderBtn {
+    display: inline;
+    color: #4a4a4a;
+    font-size: 14px;
     cursor: pointer;
     user-select: none;
-    display: inline;
-    font-size: 14px;
-    color: #4a4a4a;
   }
   span {
     margin: 0 8px;
   }
   .backSize {
-    cursor: pointer;
     color: #4a4a4a;
+    cursor: pointer;
     &::before {
-      content: '|';
-      color: #dbdbdb;
       margin-right: 7px;
+      color: #dbdbdb;
+      content: '|';
     }
   }
 }
 .fastMenu {
   .boardTit {
-    text-align: center;
-    line-height: 2;
     font-weight: bold;
+    line-height: 2;
+    text-align: center;
   }
   .keyRow {
-    margin: 10px;
     display: flex;
+    margin: 10px;
     .key {
       margin-right: 30px;
       code {
         display: inline-block;
-        border: 1px solid #f0f0f0;
-        border-radius: 2px;
+        margin-right: 3px;
         padding: 0 3px;
         color: rgba(94, 41, 41, 0.6);
         font-size: 12px;
-        margin-right: 3px;
+        border: 1px solid #f0f0f0;
+        border-radius: 2px;
       }
     }
     .text {

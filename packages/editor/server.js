@@ -14,7 +14,7 @@ app.use(logger());
 // 设置跨域
 app.use(
   cors({
-    origin: function(ctx) {
+    origin: function (ctx) {
       if (ctx.url.indexOf('/dooring') > -1) {
         return '*'; // 允许来自所有域名请求
       }

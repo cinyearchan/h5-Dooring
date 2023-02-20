@@ -6,7 +6,7 @@ import XProgress from './XProgress/template';
 
 const visualTemplate = [Chart, Line, Pie, Area, XProgress];
 
-const VisualTemplate = visualTemplate.map(v => {
+const VisualTemplate = visualTemplate.map((v) => {
   return { ...v, category: 'visual' };
 });
 export default VisualTemplate;
